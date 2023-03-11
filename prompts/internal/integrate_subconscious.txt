@@ -1,0 +1,23 @@
+Current Story:
+{}
+END STORY
+
+Current dialogue:
+{}
+END CURRENT DIALOGUE
+
+New Dialogue: {}
+
+Current Dialogue:
+{}
+END CURRENT DIALOGUE
+
+New Dialogue: {}
+
+Incorporate the current dialogue and the new dialogue into the current story.
+
+Approximate story length: {} words
+
+Terminate with "END STORY" by itself on a new line
+
+Revised Information:

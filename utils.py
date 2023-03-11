@@ -1,0 +1,41 @@
+from generation import generate_prompt
+from generation import call_openai
+import data
+import parameters
+
+def checkValidMemory(memory, new_memory):
+    try:
+        if len(new_memory) < parameters.contraction_tolerance * len(memory):
+            print("Fails Basic: " + str(len(new_memory)/len(memory) * 100) + "\n\n")
+            return False
+        if not new_memory[0].isupper():
+            print("Fails Initial Capitalization\\n\n")
+            return False
+        if not new_memory.endswith("END STORY"):
+            print("Fails Suffix Requirement\n\n")
+            return False
+        return True
+    except Exception as e:
+        print(e)
+
+def updateInternal(mem_id, prompt, capacity):
+    print("Updating...\n")
+    output = ""
+    internalmem = data.getMemory(mem_id)
+    while output == "":
+        output = call_openai(prompt, capacity)
+        output = output.strip('.')
+        if not checkValidMemory(internalmem, output):
+            output = ""
+    cleaned = output.removesuffix("END STORY")
+    data.setMemory(mem_id, cleaned)
+    data.appendHistory(mem_id, cleaned)
+    print("Finished...\n")
+    return output
+
+# Get the approximate length of memory capacity in words
+def internalLength():
+    return round(parameters.internal_capacity * 4 / 3.5)
+
+def subLength():
+    return round(parameters.sub_capacity * 4 / 3.5)

@@ -1,0 +1,19 @@
+Current Story:
+{}
+END STORY
+
+Current Dialogue:
+{}
+END CURRENT DIALOGUE
+
+New Dialogue: {}
+
+Incorporate the current dialogue and the new dialogue into the current story.
+
+Approximate story length: {} words
+
+The story must maintain the following plot: A group of strangers wake up on a mysterious island with no memory of how they got there. As they try to find a way to escape, they discover that the island is full of dangerous secrets and hidden agendas, and that their pasts may be more connected than they ever imagined.
+
+The story must not contain spelling errors, incomplete words or sentences, or other kinds of errors. Terminate with "END STORY" by itself on a new line
+
+Revised Story:

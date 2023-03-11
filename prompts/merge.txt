@@ -1,0 +1,11 @@
+Merge the following two storys.
+
+Secondary Story:
+{}
+END Story
+
+Primary Story:
+{}
+END STORY
+
+Merged Story (terminate with "END STORY"):
