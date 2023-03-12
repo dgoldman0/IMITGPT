@@ -11,9 +11,6 @@ def checkValidMemory(memory, new_memory):
         if not new_memory[0].isupper():
             print("Fails Initial Capitalization\\n\n")
             return False
-        if not new_memory.endswith("END STORY"):
-            print("Fails Suffix Requirement\n\n")
-            return False
         return True
     except Exception as e:
         print(e)
@@ -24,12 +21,12 @@ def updateInternal(mem_id, prompt, capacity):
     internalmem = data.getMemory(mem_id)
     while output == "":
         output = call_openai(prompt, capacity)
-        output = output.strip('.')
-        if not checkValidMemory(internalmem, output):
+        revision_prompt = generate_prompt("internal/revise", (output, ))
+        final = call_openai(revision_prompt, capacity)
+        if not checkValidMemory(internalmem, final):
             output = ""
-    cleaned = output.removesuffix("END STORY")
-    data.setMemory(mem_id, cleaned)
-    data.appendHistory(mem_id, cleaned)
+    data.setMemory(mem_id, final)
+    data.appendHistory(mem_id, final)
     print("Finished...\n")
     return output
 
