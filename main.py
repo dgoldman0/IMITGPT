@@ -6,6 +6,6 @@ import asyncio
 
 async def main():
     data.init()
-    await asyncio.gather(internal.think(), internal.subthink()) 
+    await asyncio.gather(internal.think(), internal.subthink())
 
 asyncio.run(main())
