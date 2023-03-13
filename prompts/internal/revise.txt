@@ -1,6 +1,9 @@
-Revise the following story to ensure that it has a logical progression, and is free from other errors.
+Revise the following story to ensure that it follows a logical progression.
 
 Original Story:
+{}
 END STORY
 
-Revised Story:
+Approximate story length: {} words
+
+Revised Story (maintain length):

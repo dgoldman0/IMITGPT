@@ -21,8 +21,12 @@ def updateInternal(mem_id, prompt, capacity):
     internalmem = data.getMemory(mem_id)
     while output == "":
         output = call_openai(prompt, capacity)
-        revision_prompt = generate_prompt("internal/revise", (output, ))
-        final = call_openai(revision_prompt, capacity)
+        final = output
+
+        if mem_id == 1:
+            revision_prompt = generate_prompt("internal/revise", (output, internalLength(), ))
+            final = call_openai(revision_prompt, capacity)
+
         if not checkValidMemory(internalmem, final):
             output = ""
     data.setMemory(mem_id, final)
