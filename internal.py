@@ -9,21 +9,22 @@ import time
 
 async def think():
     print("Thinking...")
-    while True:
+    i = 0
+    while i < 20:
         if not data.locked:
             data.locked = True
+            i += 1
             working_memory = data.getWorkingMemory(1)
             internalmem = data.getMemory(1)
             # Need to fix memory access
             prompt = generate_prompt("internal/step_conscious", (internalmem, working_memory, ))
             ai_response = call_openai(prompt, 32, temp = 0.85)
-            print("Thought: " + ai_response + "\n")
             prompt = generate_prompt("internal/integrate", (internalmem, working_memory, ai_response, utils.internalLength(), ))
             output = await asyncio.get_event_loop().run_in_executor(None, utils.updateInternal, 1, prompt, parameters.internal_capacity)
             working_memory += ai_response + "\n"
 
             data.setWorkingMemory(1, working_memory)
-
+            print(round(i * 100 / 20 ) + "% complete...")
             data.locked = False
             await asyncio.sleep(parameters.thinkpause)
         await asyncio.sleep(0)
@@ -49,12 +50,10 @@ async def subthink():
                 merged_memory = call_openai(prompt, round((parameters.internal_capacity + parameters.sub_capacity) / 2))
             prompt = generate_prompt("internal/step_subconscious", (merged_memory, working_memory, ))
             ai_response = call_openai(prompt, 32, temp = 0.9)
-            print("Subthought(" + str(lastsub) + ")\n")
             if existingmem is not None:
                 prompt = generate_prompt("internal/integrate", (existingmem, working_memory, ai_response, utils.subLength(), ))
                 await asyncio.get_event_loop().run_in_executor(None, utils.updateInternal, (lastsub + 2), prompt, parameters.sub_capacity)
             else:
-                print("Bootstrapping subconscious memory (" + str(lastsub) + ")")
                 prompt = generate_prompt("internal/bootstrap_sub", (internalmem, ai_response, utils.subLength()))
                 mem = call_openai(prompt, parameters.sub_capacity)
                 data.appendMemory(mem)
