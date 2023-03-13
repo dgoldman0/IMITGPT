@@ -5,4 +5,4 @@ contraction_tolerance = 0.85 # Maximum tolerable reduction in long term memory -
 thinkpause = 0.1
 subpause = 0.1
 
-plot = "Monsters live together underneath a town, with intentions of helping the people but getting misunderstood each time."
+requirements = "The story must be about monsters that live together underneath a town, with intentions of helping the people but getting misunderstood each time."

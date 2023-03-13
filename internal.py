@@ -19,7 +19,7 @@ async def think():
             # Need to fix memory access
             prompt = generate_prompt("internal/step_conscious", (internalmem, working_memory, ))
             ai_response = call_openai(prompt, 32, temp = 0.85)
-            prompt = generate_prompt("internal/integrate", (internalmem, working_memory, ai_response, utils.internalLength(), parameters.plot, ))
+            prompt = generate_prompt("internal/integrate", (internalmem, working_memory, ai_response, utils.internalLength(), parameters.requirements, ))
             output = await asyncio.get_event_loop().run_in_executor(None, utils.updateInternal, 1, prompt, parameters.internal_capacity)
             working_memory += ai_response + "\n"
 
@@ -59,7 +59,7 @@ async def subthink():
                 data.appendMemory(mem)
                 data.appendHistory(lastsub + 2, mem)
             # Integrate into internal memory.
-            prompt = generate_prompt("internal/integrate", (internalmem, working_memory, ai_response, utils.internalLength(), parameters.plot, ))
+            prompt = generate_prompt("internal/integrate", (internalmem, working_memory, ai_response, utils.internalLength(), parameters.requirements, ))
             await asyncio.get_event_loop().run_in_executor(None, utils.updateInternal, 1, prompt, parameters.internal_capacity)
             # Crashes around here on lastsub == 9
             working_memory += ai_response + "\n"

@@ -12,6 +12,6 @@ Incorporate the current dialogue and the new dialogue into the current story.
 
 Approximate story length: {} words
 
-The story must maintain the following plot: {}
+The story must maintain the following requirements: {}
 
 Revised Story:
