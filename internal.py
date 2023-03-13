@@ -24,7 +24,7 @@ async def think():
             working_memory += ai_response + "\n"
 
             data.setWorkingMemory(1, working_memory)
-            print(round(i * 100 / 20 ) + "% complete...")
+            print(str(round(i * 100 / 20 )) + "% complete...")
             data.locked = False
             await asyncio.sleep(parameters.thinkpause)
         await asyncio.sleep(0)
