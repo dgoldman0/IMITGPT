@@ -8,8 +8,11 @@ def checkValidMemory(memory, new_memory):
         if len(new_memory) < parameters.contraction_tolerance * len(memory):
             print("Fails Basic: " + str(len(new_memory)/len(memory) * 100) + "\n\n")
             return False
+        if not (new_memory.endswith(".") or new_memory.endswith("?") or new_memory.endswith("!")):
+            print("Cut Off Error\n\n")
+            return False
         if not new_memory[0].isupper():
-            print("Fails Initial Capitalization\\n\n")
+            print("Fails Initial Capitalization\n\n")
             return False
         return True
     except Exception as e:
