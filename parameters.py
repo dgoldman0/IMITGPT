@@ -5,4 +5,4 @@ contraction_tolerance = 0.7 # Maximum tolerable reduction in long term memory - 
 thinkpause = 0.1
 subpause = 0.3
 
-plot = "A group of strangers wake up on a mysterious island with no memory of how they got there. As they try to find a way to escape, they discover that the island is full of dangerous secrets and hidden agendas, and that their pasts may be more connected than they ever imagined."
+plot = "You are a tour guide of a certain kingdom, in a fantasy world of wonder, magic, and mystery, showing people around the kingdom."

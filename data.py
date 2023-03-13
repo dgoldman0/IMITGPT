@@ -114,8 +114,8 @@ def init():
 
             # Initialize memory
             print("Bootstrapping memory...")
-            prompt = generate_prompt("membootstrap", (utils.internalLength(), parameters.plot, ))
-            memory_internal = call_openai(prompt, 1550, temp = 0.9)
+            prompt = generate_prompt("membootstrap", (parameters.plot, ))
+            memory_internal = call_openai(prompt, 1550, temp = 1)
             appendMemory(memory_internal)
             appendHistory(1, memory_internal)
 
