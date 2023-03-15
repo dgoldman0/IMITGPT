@@ -51,7 +51,7 @@ async def subthink():
             prompt = generate_prompt("internal/step_subconscious", (merged_memory, working_memory, ))
             ai_response = call_openai(prompt, 32, temp = 0.9)
             if existingmem is not None:
-                prompt = generate_prompt("internal/integrate", (existingmem, working_memory, ai_response, utils.subLength(), ))
+                prompt = generate_prompt("internal/integrate", (existingmem, working_memory, ai_response, utils.subLength(), parameters.requirements, ))
                 await asyncio.get_event_loop().run_in_executor(None, utils.updateInternal, (lastsub + 2), prompt, parameters.sub_capacity)
             else:
                 prompt = generate_prompt("internal/bootstrap_sub", (internalmem, ai_response, utils.subLength()))

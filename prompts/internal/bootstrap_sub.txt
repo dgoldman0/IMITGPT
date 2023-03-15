@@ -1,11 +1,11 @@
-Original Information (story format):
+Original Information (essay format):
 {}
 END INFORMATION
 
-Write an entirely new story, which uses ideas from the original information story, but centered on your new thought. Only reference your thought implicitly. The new story should be very different from the original story.
+Write an entirely new essay, which uses ideas from the original information essay, but centered on your new thought. Only reference your thought implicitly. The new essay should be very different from the original story.
 
 New Thought: {}
 
-Approximate story length: {} words
+Approximate essay length: {} words
 
-Completely New Story:
+Completely New Essay:

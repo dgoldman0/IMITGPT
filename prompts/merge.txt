@@ -1,11 +1,11 @@
-Merge the following two storys.
+Merge the following two essays.
 
-Secondary Story:
+Secondary Essay:
 {}
-END Story
+END Essay
 
-Primary Story:
+Primary Essay:
 {}
-END STORY
+END Essay
 
-Merged Story (terminate with "END STORY"):
+Merged Essay (terminate with "END ESSAY"):

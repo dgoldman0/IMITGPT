@@ -1,6 +1,6 @@
-Current Story:
+Current Essay:
 {}
-END STORY
+END ESSAY
 
 Current dialogue:
 {}
@@ -14,8 +14,8 @@ END CURRENT DIALOGUE
 
 New Dialogue: {}
 
-Incorporate the current dialogue and the new dialogue into the current story.
+Incorporate the current dialogue and the new dialogue into the current essay.
 
-Approximate story length: {} words
+Approximate essay length: {} words
 
-Revised Story:
+Revised Essay:

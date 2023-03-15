@@ -1,9 +1,9 @@
-Revise the following story to ensure that it follows a logical progression.
+Revise the following essay to ensure that it follows a logical progression.
 
-Original Story:
+Original Essay:
 {}
-END STORY
+END ESSAY
 
-Approximate story length: {} words
+Approximate essay length: {} words
 
-Revised Story (maintain length):
+Revised Essay (maintain length):

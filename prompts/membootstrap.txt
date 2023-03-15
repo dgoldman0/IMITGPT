@@ -1,3 +1,3 @@
-Write a story that meets the following requirements: {}
+Come up with a possible solution for the following problem: {}
 
-Story (approximately {} words):
+Solution (approximately {} words):
