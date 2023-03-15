@@ -12,6 +12,6 @@ Incorporate the current dialogue and the new dialogue into the current essay.
 
 Approximate essay length: {} words
 
-The essay must maintain the following requirements: {}
+The essay must meet the following requirements: {}
 
 Revised Essay:

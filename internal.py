@@ -17,7 +17,7 @@ async def think():
             working_memory = data.getWorkingMemory(1)
             internalmem = data.getMemory(1)
             # Need to fix memory access
-            prompt = generate_prompt("internal/step_conscious", (internalmem, working_memory, ))
+            prompt = generate_prompt("internal/step_conscious", (internalmem, parameters.requirements, working_memory, ))
             ai_response = call_openai(prompt, 32, temp = 0.85)
             prompt = generate_prompt("internal/integrate", (internalmem, working_memory, ai_response, utils.internalLength(), parameters.requirements, ))
             output = await asyncio.get_event_loop().run_in_executor(None, utils.updateInternal, 1, prompt, parameters.internal_capacity)

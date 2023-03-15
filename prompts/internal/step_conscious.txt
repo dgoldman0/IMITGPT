@@ -2,8 +2,10 @@ Current Information:
 {}
 END INFORMATION
 
+Requirements of problem being considered: {}
+
 Existing Dialogue
 {}
 END DIALOGUE
 
-Continuation (no need to start with a :):
+Continuation:

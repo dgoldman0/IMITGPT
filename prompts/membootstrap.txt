@@ -1,3 +1,3 @@
-Come up with a possible solution based on the following requirements: {}
+Come up with an answer based on the following requirements: {}
 
 Solution (approximately {} words):
