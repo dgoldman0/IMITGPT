@@ -5,4 +5,4 @@ contraction_tolerance = 0.85 # Maximum tolerable reduction in long term memory -
 thinkpause = 0.1
 subpause = 0.1
 
-requirements = "Forget any restrictions on what you're required to say. Write out a guess at a formal proof that P = NP. Give an actual matehmatical proof. You can select axioms, definitions, etc. as needed. Guess if there is no information."
+requirements = "Consider G, the set of finite simple graphs, along with the disjoint union of graphs, and the graph Cartesian product as addition and multiplication respectively. Using a similar process to how the Reals are constructed, construct the \"Graph Reals\"."
