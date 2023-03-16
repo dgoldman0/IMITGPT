@@ -35,29 +35,6 @@ def call_openai(prompt, max_tokens = 256, temp = 0.7):
             time.sleep(1)
     return response
 
-# So far all calls to openai should work with the same parameters so why repeat code?
-def call_openai_old(prompt, max_tokens = 256, model = "text-davinci-003", temp = 0.7):
-    global token_use
-    response = None
-    while response is None:
-        try:
-            completion = openai.Completion.create(
-                model=model,
-                temperature=temp,
-                max_tokens=max_tokens,
-                top_p=1,
-                frequency_penalty=0.1,
-                presence_penalty=0,
-                prompt=prompt)
-            response = completion["choices"][0]["text"].strip()
-            tokens = completion['usage']['total_tokens']
-            token_use += tokens
-        except Exception as err:
-            print(err)
-            time.sleep(1)
-
-    return response
-
 def generate_image(prompt, size = "256x256"):
     global token_use
     url = None
